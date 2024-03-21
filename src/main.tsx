@@ -194,24 +194,36 @@ const Camera = ({
 }
 
 const Menu = ({
+    enable_pointer_control,
     set_enable_pointer_control
 }: {
+    enable_pointer_control: boolean,
     set_enable_pointer_control: (d: boolean) => void
 }) => {
+
 
     const [closed, set_closed] = useState(false)
 
     useEffect(() => {
+        console.debug("asdfsd")
         set_enable_pointer_control(false)
     }, [])
 
     return (
 
         closed ? (
-            <h1 className='menu-closed'> Isla <GoChevronUp onClick={() => set_closed(false)} /> </h1 >
+            <h1 className='menu-closed'> Isla <GoChevronUp onClick={() => {
+                console.debug("ASDFSDf")
+                set_closed(false)
+                set_enable_pointer_control(false)
+            }
+            } /> </h1 >
         ) : (
             <div id="menu">
-                <h1>Isla <GoChevronDown onClick={() => set_closed(true)} /></h1>
+                <h1>Isla <GoChevronDown onClick={() => {
+                    set_closed(true)
+                    setTimeout(() => set_enable_pointer_control(true), 100)
+                }} /></h1>
 
                 <hr />
                 <p>by rexmalebka</p>
@@ -253,11 +265,11 @@ const App = () => {
     const [move_right, set_move_right] = useState(false)
     const [move_left, set_move_left] = useState(false)
 
-    const [enable_pointer_control, set_enable_pointer_control] = useState(true)
+    const [enable_pointer_control, set_enable_pointer_control] = useState(false)
 
     return (
         <>
-            <Menu set_enable_pointer_control={set_enable_pointer_control} />
+            <Menu enable_pointer_control={enable_pointer_control} set_enable_pointer_control={set_enable_pointer_control} />
             <Mobile_control
                 set_camera_rotation_rate_y={set_camera_rotation_rate_y}
 
