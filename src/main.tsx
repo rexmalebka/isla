@@ -18,9 +18,9 @@ import { FogExp2 } from 'three';
 
 import './css/style.css'
 const Model = () => {
-    const gltf = useLoader(GLTFLoader, '/models/tuneles.glb', (loader) => {
+    const gltf = useLoader(GLTFLoader, `${location.href}/models/tuneles.glb`, (loader) => {
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath("/js/");
+        dracoLoader.setDecoderPath(`${location.href}/js/`);
         loader.setDRACOLoader(dracoLoader);
     })
 
