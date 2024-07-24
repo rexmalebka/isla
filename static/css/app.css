@@ -1,4 +1,65 @@
 @import url(https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+#map {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: 1;
+}
+
+#map img {
+    height: 100px;
+}
+
+#map canvas {
+    position: absolute;
+    top:-10px;
+    left:-10px
+}
+
+#menu {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    gap:1rem;
+}
+
+#menu hr {
+    width: 50%;
+}
+
+#menu p {
+    width: 50%;
+}
+
+#menu h1 {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+#menu span{
+    flex: 1;
+    text-align: center;
+}
+
+.menu-closed {
+    bottom: 0;
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
 html,
 body {
     margin: 0px;
@@ -27,38 +88,6 @@ body {
     bottom: 10%;
     right: 10%;
     z-index: 1;
-}
-
-#menu {
-    backdrop-filter: blur(10px);
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
-#menu hr {
-    width: 50%;
-}
-
-#menu p {
-    width: 50%;
-}
-
-#menu h1 {
-    display: flex;
-    align-items: center;
-}
-
-.menu-closed{
-    bottom: 0;
-    position: absolute;
-    z-index: 2;
 }
 
 /*# sourceMappingURL=app.css.map*/

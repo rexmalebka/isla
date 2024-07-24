@@ -1,0 +1,16 @@
+#map {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: 1;
+}
+
+#map img {
+    height: 100px;
+}
+
+#map canvas {
+    position: absolute;
+    top:-10px;
+    left:-10px
+}
